@@ -2,7 +2,7 @@ import { FC } from "react";
 import Popup from "reactjs-popup";
 
 import { FunctionButton } from "@ui";
-import { ArrowBigRight, ArrowBigRightDash } from "lucide-react";
+import { ArrowBigRight, ArrowBigRightDash, Download } from "lucide-react";
 
 export const FAQ: FC<{}> = () => {
   const toggle = (
@@ -22,43 +22,20 @@ export const FAQ: FC<{}> = () => {
           {/* <Logo /> */}
           <strong className="text-3xl">Instructions</strong>
           <p className="mt-3">
-            CLUE - which stands for Chatbot-Led User Experience interviews - is
-            a research project being conducted at CMU. For this project, we ask
-            that participants engage with a chatbot for 10-15 minutes, then
-            participate in a follow-up survey about the initial conversation.
+            CLUE - which stands for Chatbot-Led User Experience interviews - was a research project conducted at CMU, studying whether or not chatbots could potentially serve as a replacement or supplement to human interviewers. This repo replicates that experiment in miniature, as a local project.
           </p>
           <p>
-            To begin, {"you'll"} first need to login using your Mechanical Turk
-            Worker ID and the unique one-time password provided as part of the
-            task. Once you do so, press enter or the{" "}
-            <ArrowBigRight className="inline" /> button, then wait a moment to
-            be automatically redirected to the initial chat.
+            To begin, {"you'll"} first need to set up the project and its required environment variables. Instructions on how to do so are found in the README.md on this github repo, <a href="https://github.com/cxcscmu/CLUE-LLM-open/blob/main/README.md" className="underline hover:font-bold">here</a>.
           </p>
           <p>
-            In the initial chat page, you will send the first message. If your
-            task gave you a specific topic to chat about, please talk to the bot
-            about that - otherwise, choose your own topic. The chat page will
-            have a timer at the bottom of your chat, counting 10 minutes - after
-            this time is over, you can end the conversation by clicking the{" "}
-            <ArrowBigRightDash className="inline" /> button. If you {"don't"}{" "}
-            end the conversation early, it will automatically redirect you to
-            the next page after 15 minutes.
+            In the initial chat page, you will send the first message after selecting a model after from the selector, which displays the models you have enabled during the setup period. After sending at least 3 messages, you can click the {" "} <ArrowBigRightDash className="inline" /> button to continue on to the interview portion of the project.
           </p>
           <p>
             In the final page of the project, you will speak with a virtual
-            interviewer for 10-15 minutes. Here, the interviewer will send the
-            first message, and should be leading the conversation. Once again,
-            there is a timer counting 10 minutes - after the interviewer says
-            that the interview is concluded, you can hit the{" "}
-            <ArrowBigRightDash className="inline" /> button to conclude the
-            interview. If you are told that the interview is over before the
-            button is available, wait until it is.
+            interviewer about your conversation in the previous page. Here, the interviewer will send the first message, and should lead the conversation. Once again, after sending at least 3 messages, you can hit the {" "} <Download className="inline" /> button to conclude the interview.
           </p>
           <p>
-            <strong>
-              PLEASE DO NOT CLOSE THE WINDOW UNTIL THE CHAT HAS BEEN ENDED
-              BY CLICKING THE BUTTON.
-            </strong>
+            When you click the {" "} <Download className="inline" /> button to end the interview, the program will allow you to save a .json file of your conversation to your computer. Be sure to put this in an accessible place, as you'll need it to use CLUE-LLM!
           </p>
         </div>
       </div>

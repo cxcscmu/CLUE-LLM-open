@@ -22,15 +22,11 @@ const Anthropic_Claude_Haiku: selection = {
   label: "Anthropic: Claude 3.5 Haiku",
 };
 const Anthropic_Claude_Opus: selection = {
-  value: "us.anthropic.claude-3-opus-20240229-v1:0", // may not work with current bedrock access gateway
+  value: "us.anthropic.claude-3-opus-20240229-v1:0",
   label: "Anthropic: Claude 3.5 Opus",
 };
 
 // Models from Google
-const Gemini_2_0_Flash: selection = {
-  value: "gemini-2.0-flash-exp",
-  label: "Google: Gemini 2.0 Flash (Experimental)",
-};
 const Gemini_1_5_Flash: selection = {
   value: "gemini-1.5-flash",
   label: "Google: Gemini 1.5 Flash",
@@ -60,14 +56,13 @@ const Amazon_Nova_Micro: selection = {
   label: "Amazon: Nova Micro",
 };
 
-// Other companies
+// Models from Deepseek
 const Deepseek_V3: selection = {
   value: "deepseek-ai/DeepSeek-V3", // on togetherai
   label: "DeepSeek V3",
 };
 
 const Deepseek_R1: selection = {
-  // value: "deepseek-reasoner"
   value: "deepseek-ai/DeepSeek-R1", // on togetherai
   label: "DeepSeek R1",
 };
@@ -75,18 +70,15 @@ const Deepseek_R1: selection = {
 export const sessionModels: selection[] = [
   OPENAI_GPT_4o,
   Gemini_1_5_Flash,
-  // Gemini_2_0_Flash,
   Llama3_3_70b_Instruct,
   Anthropic_Claude_Sonnet,
   Deepseek_R1,
   Deepseek_V3,
-
   // Amazon_Nova_Pro,
+  // Amazon_Nova_Lite
+  // Amazon_Nova_Micro
 ];
 
 export const interviewModels: selection[] = [
   OPENAI_GPT_4o,
-  // Anthropic_Claude_Sonnet,
-  // Llama3_3_70b_Instruct,
-  // Amazon_Nova_Pro,
 ];

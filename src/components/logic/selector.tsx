@@ -12,14 +12,14 @@ export const Selector: FC<{
   values: selection[];
   target: string;
   setFunc: Function;
-}> = ({ label = "", values, target, setFunc }) => {
-  const [randomized, setRandomized] = useState(false);
+  disabled?: Boolean;
+}> = ({ label = "", values, target, setFunc, disabled = false }) => {
   const handleRandomize = () => {
     const randIndex = Math.floor(Math.random() * values.length);
     setFunc(values[randIndex].value);
   };
 
-  if (process.env.NODE_ENV === "development") {
+  if (!disabled && values.length > 1) {
     return (
       <div className="flex flex-row items-center justify-start">
         {/* Keeps the label and selector in a single line. */}
@@ -36,7 +36,6 @@ export const Selector: FC<{
           onChange={(e) => setFunc(e.target.value)}
         >
           {/* choose between one of several options */}
-          {/* <option value="random">Randomly Selected Model</option> */}
           {values.map((item, index) => (
             <option key={index} value={item.value}>
               {item.label}
@@ -52,8 +51,9 @@ export const Selector: FC<{
         </FunctionButton>
       </div>
     );
-  } else if (!randomized) {
-    handleRandomize();
-    setRandomized(true);
+  } else {
+    return <p className="text-sm select-none text-left dark:text-zinc-100">
+      Chatting with {target}
+    </p>
   }
 };
